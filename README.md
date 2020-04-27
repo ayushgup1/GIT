@@ -24,6 +24,11 @@ If you want to move head to previous commit due to some issue with current commi
   git log --topo-order --all --graph --date=local --pretty=format:'%C(green)%h%C(reset) %><(55,trunc)%s%C(red)%d%C(reset) %C(blue)[%an]%C(reset) %C(yellow)%ad%C(reset)%n'
 
 9. git reset HEAD NAME : to unstage the file. Replace NAME with the file you want to unstage. 
+   RESET moves the current branch, and optionally copies data from the repository to the other areas. 
+   --hard  moves data from repo to both staged + working area
+   --soft  keeps the data in repo only
+   --mixed (default) moves data from repo to only staged area
+
 10. git checkout -- NAME : to recover the delected file.
 
 
@@ -53,3 +58,26 @@ If you want to move head to previous commit due to some issue with current commi
     OR 
 
 21. git mv menu.txt menu.md : combination of 19 and 20
+
+## Stash
+
+   We have another important area in GIT which we can refer to as stash. It has two basic functionalities :
+   a. Take files from working + staged area 
+   b. Make the files in working + staged area similar to what we have in our repo.
+
+22. git stash --include-untracked
+23. git stash apply : moves data from stash area back to working    + staged area
+
+## Checkout 
+
+    Be careful using checkout command it can be destructive. 
+
+24. git checkout HEAD menu.txt : copies menu.txt from repo to staged and working area overiding the already existing menu.txt
+
+
+
+
+
+
+
+
