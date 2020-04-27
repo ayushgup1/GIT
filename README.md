@@ -12,7 +12,7 @@ Basic GIT learnings
  
 ## Now, after initial commit there are changes  : 
 
-6. git diff README.md  : Shows diffrence in the files if any with respect to what you have in master branch. 
+6. git diff README.md  : Shows diffrence in the files if any with respect to what you have in master branch.(working area and index/staged area) git diff --cached(index vs branch area)
 7. git log   : Shows you the log history
 
 If you want to move head to previous commit due to some issue with current commit use the following :
@@ -40,3 +40,16 @@ If you want to move head to previous commit due to some issue with current commi
 16. git merge development	: merge from development to master
 17. git push origin master	: push the changes
 
+## Remove the files
+
+18. git rm --cached FILENAME : file removed from staged and back to working area. 
+
+## Rename the files
+
+    We had menu.txt already existing now we have changed its name to menu.md
+19. git add menu.md
+20. git add menu.txt  : adds empty menu.txt to staged area. Git automatically figures it out that it has been renamed. 
+
+    OR 
+
+21. git mv menu.txt menu.md : combination of 19 and 20
